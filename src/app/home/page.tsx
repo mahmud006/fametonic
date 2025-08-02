@@ -22,7 +22,7 @@ export default function Home() {
             opacity: 1,
             transform: 'rotate(0deg)',
           }}
-          className='object-contain w-[390px] max-w-[426px] h-auto'
+          className='object-contain w-[360px] min-[390px]:w-[390px] max-w-[426px] h-auto'
           priority
           loading='eager'
           onLoad={(e) => {

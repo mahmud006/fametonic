@@ -1,7 +1,7 @@
 export default function HeroSection() {
   return (
     <div className='w-full bg-black text-white flex flex-col relative'>
-      <div className='px-4 md:px-8 lg:px-[10%] xl:px-[15%] 2xl:px-[211px] z-20 relative pt-[400px] sm:pt-[550px] md:pt-[450px] lg:pt-[0px]'>
+      <div className='px-4 md:px-8 lg:px-[10%] xl:px-[15%] 2xl:px-[211px] z-20 relative pt-[350px] min-[390px]:pt-[400px] sm:pt-[550px] md:pt-[450px] lg:pt-[0px]'>
         <div className='w-full'>
           <div className='w-full lg:max-w-[516px] 2xl:max-w-[100%] text-center lg:text-left order-2 lg:order-1 flex flex-col gap-2'>
             <h1
