@@ -24,6 +24,13 @@ export default function Home() {
           }}
           className='object-contain w-[390px] max-w-[426px] h-auto'
           priority
+          loading="eager"
+          onLoad={(e) => {
+            e.currentTarget.style.opacity = '1';
+          }}
+          onError={(e) => {
+            console.error('Image failed to load:', e);
+          }}
         />
       </div>
       <div className='hidden sm:block absolute top-[156px] left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:top-[126px] lg:right-[20px] xl:right-[60px] 2xl:right-[101px]'>
@@ -38,6 +45,13 @@ export default function Home() {
           }}
           className='object-contain w-[500px] min-w-[500px] lg:w-[666px] h-auto'
           priority
+          loading="eager"
+          onLoad={(e) => {
+            e.currentTarget.style.opacity = '1';
+          }}
+          onError={(e) => {
+            console.error('Image failed to load:', e);
+          }}
         />
       </div>
     </div>
