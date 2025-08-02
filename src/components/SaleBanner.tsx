@@ -6,14 +6,14 @@ export default function SaleBanner() {
   ];
   return (
     <div
-      className='h-[76px] md:h-[46px] px-5 md:px-[20px] text-center flex items-center justify-center md:w-full mx-auto'
+      className='h-[76px] lg:h-[46px] px-5 md:px-[20px] text-center flex items-center justify-center md:w-full mx-auto'
       style={{
         background:
           'linear-gradient(89.63deg, #FC004E -2.16%, #10CBE0 115.27%)',
       }}
     >
-      <div className='flex flex-col md:flex-row items-center justify-center w-full gap-1'>
-        <div className='flex flex-row items-center gap-1 md:hidden'>
+      <div className='flex flex-col items-center gap-1 sm:hidden'>
+        <div className='flex flex-row items-center gap-1'>
           <span className='text-[#10CBE0] font-extrabold text-[16px] leading-[100%] text-center'>
             {textParts[0].text}
           </span>
@@ -21,16 +21,19 @@ export default function SaleBanner() {
             {textParts[1].text}
           </span>
         </div>
+        <span className='text-white font-semibold text-[16px] leading-[100%] text-center'>
+          {textParts[2].text}
+        </span>
+      </div>
 
-        <span className='hidden md:block text-[#10CBE0] font-extrabold text-[22px] leading-[26px] text-center'>
+      <div className='hidden sm:block'>
+        <span className='text-[#10CBE0] font-extrabold text-[22px] leading-[26px]'>
           {textParts[0].text}
         </span>
-
-        <span className='hidden md:block text-white font-semibold text-[22px] leading-[26px] text-center'>
+        <span className='text-white font-semibold text-[22px] leading-[26px] ml-2'>
           {textParts[1].text}
         </span>
-
-        <span className='text-white font-semibold text-[16px] md:text-[22px] leading-[100%] md:leading-[26px] text-center'>
+        <span className='text-white font-semibold text-[22px] leading-[26px] ml-2'>
           {textParts[2].text}
         </span>
       </div>

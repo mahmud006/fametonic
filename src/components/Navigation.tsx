@@ -5,19 +5,23 @@ import Image from 'next/image';
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
   return (
-    <nav className='bg-black pt-6 md:py-6 px-4 md:px-8'>
-      <div className='max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 lg:px-[10%] xl:px-[15%] 2xl:px-[211px] relative'>
+    <nav className='absolute top-[76px] left-0 right-0 z-50 md:relative md:top-auto md:bg-black pt-4 md:pt-0'>
+      <div className='max-w-full flex justify-between px-[10%] xl:px-[15%] 2xl:px-[211px] relative'>
         <div className='text-white flex-1 md:flex-none flex justify-center md:justify-start'>
           <Image
             src='/assets/brand-name.svg'
             alt='Fametonic'
-            width={100}
-            height={100}
+            width={80}
+            height={24}
+            className='w-[107.78px] md:w-[173.12px] md:h-auto'
           />
         </div>
 
-        <div className='hidden md:flex space-x-8'>
+        <div className='hidden md:flex space-x-8 items-start'>
           <button className='text-white hover:text-gray-300 transition-colors text-base'>
             About us
           </button>
@@ -27,17 +31,18 @@ export default function Navigation() {
         </div>
 
         <button
-          className='md:hidden text-white absolute right-4 text-xl'
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className='md:hidden text-white absolute right-4 text-lg z-30 p-2 bg-black/50 rounded'
+          onClick={toggleMenu}
           aria-label='Toggle menu'
+          style={{ pointerEvents: 'auto' }}
         >
           <i className={`fas ${isMobileMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
       </div>
 
       {isMobileMenuOpen && (
-        <div className='md:hidden mt-4 pt-4 border-t border-gray-800'>
-          <div className='flex flex-col space-y-4'>
+        <div className='md:hidden mt-4 pt-4 border-t border-gray-800 bg-black/90 backdrop-blur-sm'>
+          <div className='flex flex-col space-y-4 px-8'>
             <button className='text-white text-left'>About us</button>
             <button className='text-white text-left'>Contact</button>
           </div>
